@@ -19,11 +19,11 @@ import json
 import twitter
 from watson_developer_cloud import PersonalityInsightsV2 as PersonalityInsights
 def analyze(handle):
-
-	twitter_consumer_key = '0UAUzgrJqnbEHX8e6D6oeqAbT'  
-	twitter_consumer_secret = 'h2fczsDeMWgpXovgpZwsJ7zLtOknd3QRuDGrXWucpEVAmEKHwv'  
-	twitter_access_token = '839931355991535621-KiPSBgOFHHXVXj9XhYrGF1StFwR9usJ'  
-	twitter_access_secret = 'PiEbJp9qhpUblGU2MdphEdNE7TszzgxsASIj8xIWUiiCV'
+#Twitter app credentials for api call!!
+	twitter_consumer_key = '****************************'  
+	twitter_consumer_secret = '****************************'  
+	twitter_access_token = '****************************'  
+	twitter_access_secret = '****************************'
 	twitter_api = twitter.Api(consumer_key=twitter_consumer_key,
                           consumer_secret=twitter_consumer_secret, 
                           access_token_key=twitter_access_token, 
@@ -37,8 +37,8 @@ def analyze(handle):
     		if (status.lang =='en'): #English tweets
       			text += status.text.encode('utf-8')
 #The IBM Bluemix credentials for Personality Insights!
-	pi_username = 'f40696b2-8ea9-418f-984a-e09b353aa8dd'
-	pi_password = 'OQQFUyhK0rJH'
+	pi_username = '****************************'
+	pi_password = '****************************'
 	personality_insights = PersonalityInsights(username=pi_username, password=pi_password)
 	pi_result = personality_insights.profile(text)
 	return pi_result
